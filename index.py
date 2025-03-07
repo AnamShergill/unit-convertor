@@ -1,9 +1,9 @@
 import streamlit as st
 
-# Set Streamlit page configuration
-st.set_page_config(page_title="Google Unit Converter", page_icon="🔄", layout="centered")
+# Set Streamlit page configuration for better responsiveness
+st.set_page_config(page_title="Google Unit Converter", page_icon="🔄", layout="wide")
 
-# Apply custom CSS styling
+# Apply responsive CSS styling
 st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -21,15 +21,24 @@ st.markdown("""
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Custom heading */
+        /* Responsive Title */
         .title {
             text-align: center;
-            font-size: 36px;
+            font-size: 4vw; /* Adjusts based on screen size */
             font-weight: 700;
             color: #2C3E50;
             padding-bottom: 10px;
             border-bottom: 3px solid #3498DB;
             margin-bottom: 20px;
+        }
+
+        /* Subheading Styling */
+        .subheading {
+            text-align: center;
+            font-size: 2.5vw;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 15px;
         }
 
         /* Button styling */
@@ -49,7 +58,7 @@ st.markdown("""
             box-shadow: 0px 4px 8px rgba(52, 152, 219, 0.5);
         }
 
-        /* Card styling */
+        /* Card styling with responsive padding */
         .card {
             background: white;
             padding: 20px;
@@ -58,6 +67,11 @@ st.markdown("""
             margin-bottom: 20px;
         }
 
+        /* Make headings responsive */
+        @media screen and (max-width: 600px) {
+            .title { font-size: 6vw; } /* Bigger on mobile */
+            .subheading { font-size: 4vw; }
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -101,8 +115,9 @@ def convert_units(value, from_unit, to_unit, category):
 
     return round(converted_value, 4)
 
-# Title
+# Title with responsiveness
 st.markdown("<h1 class='title'>🔄 Google-Style Unit Converter</h1>", unsafe_allow_html=True)
+st.markdown("<h3 class='subheading'>Convert units seamlessly</h3>", unsafe_allow_html=True)
 
 # Card-style layout
 st.markdown("<div class='card'>", unsafe_allow_html=True)
