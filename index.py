@@ -1,17 +1,17 @@
 import streamlit as st
 
-# Set Streamlit page configuration for a better layout
-st.set_page_config(page_title="Google Unit Converter", page_icon="🔄", layout="wide")
+# Set Streamlit page configuration
+st.set_page_config(page_title="Google Unit Converter", page_icon="🔄", layout="centered")
 
-# Apply custom CSS for a dark theme with improved visibility
+# Apply custom neon theme CSS
 st.markdown("""
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #141E30, #243B55); /* Dark Gradient */
-            color: #EAECEE;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
         }
 
         .stApp {
@@ -19,59 +19,51 @@ st.markdown("""
             padding: 2rem;
         }
 
-        /* Title Styling */
+        /* Neon Title */
         .title {
             text-align: center;
-            font-size: 4vw;
-            font-weight: 700;
-            color: #F39C12; /* Bright orange for visibility */
+            font-size: 42px;
+            font-weight: 800;
+            color: #00ffff; /* Neon Cyan */
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #ff00ff;
             padding-bottom: 10px;
-            border-bottom: 3px solid #F39C12;
+            border-bottom: 4px solid #ff00ff; /* Neon Pink Border */
             margin-bottom: 20px;
         }
 
-        /* Subheading Styling */
-        .subheading {
-            text-align: center;
-            font-size: 2.5vw;
-            font-weight: 500;
-            color: #F1C40F; /* Light yellow for contrast */
-            margin-bottom: 15px;
-        }
-
-        /* Card Styling */
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
-
-        /* Button Styling */
+        /* Button styling */
         .stButton>button {
-            background: #F39C12;
+            background: #ff00ff;
             color: white;
             font-weight: bold;
             border: none;
             padding: 12px 20px;
             border-radius: 8px;
             transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
         }
 
         .stButton>button:hover {
-            background: #E67E22;
-            transform: scale(1.05);
-            box-shadow: 0px 4px 8px rgba(243, 156, 18, 0.5);
+            background: #00ffff;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
         }
 
-        /* Mobile-friendly Adjustments */
-        @media screen and (max-width: 600px) {
-            .title { font-size: 6vw; } 
-            .subheading { font-size: 4vw; }
+        /* Card styling */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3);
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
         }
+
     </style>
 """, unsafe_allow_html=True)
+
+# Title (with updated styles)
+st.markdown("<h1 class='title'>🔄 Google-Style Unit Converter</h1>", unsafe_allow_html=True)
 
 # Define unit conversion dictionary
 conversions = {
@@ -113,10 +105,6 @@ def convert_units(value, from_unit, to_unit, category):
 
     return round(converted_value, 4)
 
-# Title
-st.markdown("<h1 class='title'>🔄 Google-Style Unit Converter</h1>", unsafe_allow_html=True)
-st.markdown("<h3 class='subheading'>Convert units seamlessly</h3>", unsafe_allow_html=True)
-
 # Card-style layout
 st.markdown("<div class='card'>", unsafe_allow_html=True)
 
@@ -143,4 +131,4 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # Footer
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 14px; color: #BDC3C7;'>🚀 Built with Python & Streamlit</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 14px; color: #bbb;'>🚀 Built with Python & Streamlit</p>", unsafe_allow_html=True)
