@@ -1,34 +1,32 @@
 import streamlit as st
 
-# Set Streamlit page configuration for better responsiveness
+# Set Streamlit page configuration for a better layout
 st.set_page_config(page_title="Google Unit Converter", page_icon="🔄", layout="wide")
 
-# Apply responsive CSS styling
+# Apply custom CSS for a dark theme with improved visibility
 st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F4F4F4;
-            color: #333;
+            background: linear-gradient(to right, #141E30, #243B55); /* Dark Gradient */
+            color: #EAECEE;
         }
 
         .stApp {
-            background: white;
+            background: transparent;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsive Title */
+        /* Title Styling */
         .title {
             text-align: center;
-            font-size: 4vw; /* Adjusts based on screen size */
+            font-size: 4vw;
             font-weight: 700;
-            color: #2C3E50;
+            color: #F39C12; /* Bright orange for visibility */
             padding-bottom: 10px;
-            border-bottom: 3px solid #3498DB;
+            border-bottom: 3px solid #F39C12;
             margin-bottom: 20px;
         }
 
@@ -37,13 +35,22 @@ st.markdown("""
             text-align: center;
             font-size: 2.5vw;
             font-weight: 500;
-            color: #555;
+            color: #F1C40F; /* Light yellow for contrast */
             margin-bottom: 15px;
         }
 
-        /* Button styling */
+        /* Card Styling */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* Button Styling */
         .stButton>button {
-            background: #3498DB;
+            background: #F39C12;
             color: white;
             font-weight: bold;
             border: none;
@@ -53,23 +60,14 @@ st.markdown("""
         }
 
         .stButton>button:hover {
-            background: #2980B9;
+            background: #E67E22;
             transform: scale(1.05);
-            box-shadow: 0px 4px 8px rgba(52, 152, 219, 0.5);
+            box-shadow: 0px 4px 8px rgba(243, 156, 18, 0.5);
         }
 
-        /* Card styling with responsive padding */
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        /* Make headings responsive */
+        /* Mobile-friendly Adjustments */
         @media screen and (max-width: 600px) {
-            .title { font-size: 6vw; } /* Bigger on mobile */
+            .title { font-size: 6vw; } 
             .subheading { font-size: 4vw; }
         }
     </style>
@@ -115,7 +113,7 @@ def convert_units(value, from_unit, to_unit, category):
 
     return round(converted_value, 4)
 
-# Title with responsiveness
+# Title
 st.markdown("<h1 class='title'>🔄 Google-Style Unit Converter</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='subheading'>Convert units seamlessly</h3>", unsafe_allow_html=True)
 
@@ -145,4 +143,4 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # Footer
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 14px; color: #666;'>🚀 Built with Python & Streamlit</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 14px; color: #BDC3C7;'>🚀 Built with Python & Streamlit</p>", unsafe_allow_html=True)
